@@ -1,0 +1,9 @@
+.idea
+*.idea
+.DS_Store
+*.iml
+*.ipr
+*.DS_Store
+data
+__pycache__
+*__pycache__

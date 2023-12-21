@@ -1,0 +1,5 @@
+pytorch == 1.10.1
+transformers == 4.21.1
+datasets == 2.4.0
+openprompt
+opendelta
