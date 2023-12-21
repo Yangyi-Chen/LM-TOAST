@@ -17,16 +17,19 @@ You can download the datasets from Google Drive [[download]](https://drive.googl
 and upload the folder (**TextClassification**) to the `data` directory. Then, all the datasets used in the paper can be find in ./data/TextClassification.
 
 
-
-
 # Experiments
 ```sh
 export PYTHONPATH='pwd':$PYTHONPATH
 python src/scripts/run.py --model_name t5 --scale base --dataset_name amazon_food --save_path amazon_t5base.ckpt
 ```
+You can change the --model_name, --scale to run different experiments with different models and scales.
+The --dataset_name can be chosen from sst2, mnli, yahoo_answers_topics, amazon_food, civil_comments, dynasent.
 
-
-
+The hyper-parameters, such as the repeat number, consistent_factor, data augmentation approach, are configured as default values in the file.
+You may run the following code to check the hyper-parameters configuration:
+```sh
+python src/scripts/run.py --help
+```
 
 
 
