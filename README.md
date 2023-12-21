@@ -1,5 +1,5 @@
 # LM-TOAST
-Code and data of the Findings of ACL 2023 paper "Making Pre-trained Language Models both Task-solvers and Self-calibrators"
+Code and data of the Findings of ACL 2023 [[paper](https://aclanthology.org/2023.findings-acl.624/)] "Making Pre-trained Language Models both Task-solvers and Self-calibrators".
 
 # Installation
 
@@ -19,10 +19,39 @@ and upload the folder (**TextClassification**) to the `data` directory. Then, al
 
 
 
-
 # Experiments
 
 
+
+
+
+
+
+# Process Results
+To compute the metrics for calibration. Run:
+```sh
+export PYTHONPATH='pwd':$PYTHONPATH
+python src/scripts/metric.py --setting_list SETTING_LIST --model_list MODEL_LIST --dataset_list DATASET_LIST
+```
+By passing `SETTING_LIST`, `MODEL_LIST` and `DATASET_LIST`, you can find the final metrics for all the experiments in the directory `./metrics`.
+
+
+
+
+
+# Citation
+Please kindly cite our paper:
+```
+@inproceedings{chen-etal-2023-making,
+    title = "Making Pre-trained Language Models both Task-solvers and Self-calibrators",
+    author = "Chen, Yangyi  and
+      Wang, Xingyao  and
+      Ji, Heng",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2023",
+    year = "2023",
+    publisher = "Association for Computational Linguistics",    
+}
+```
 
 
 
