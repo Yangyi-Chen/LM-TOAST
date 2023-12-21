@@ -638,25 +638,22 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--repeats', type=int, default=3)
     parser.add_argument('--model_name', type=str, default="t5")
-    parser.add_argument('--dataset_name', type=str, default="amazon_food")
-    parser.add_argument('--K', type=int, default=2)
-    # parser.add_argument('--record', type=str, default='record.txt')
-    parser.add_argument('--method_name', type=str, default='LCF')
-    parser.add_argument('--neg_sample', type=str, default='', choices=['','random', 'plain', 'orig', 'eda'])
-    parser.add_argument('--alpha', type=str, default='False')
-    parser.add_argument('--clip', type=int, default=0)
-    parser.add_argument('--sample', type=int, default=-1)
-    parser.add_argument('--seed', type=int, default=-1)
-    parser.add_argument('--save_path', default='', type=str)
-    parser.add_argument('--factor', default=0.1, type=float)
     parser.add_argument('--scale', default='base')
+    parser.add_argument('--K', type=int, default=2)
+    parser.add_argument('--method_name', type=str, default='TOAST')
+    parser.add_argument('--neg_sample', type=str, default='eda', choices=['', 'random', 'plain', 'orig', 'eda'])
+    parser.add_argument('--factor', default=0.1, type=float)
+    parser.add_argument('--seed', type=int, default=-1)
+    parser.add_argument('--sample', type=int, default=-1)
+    parser.add_argument('--clip', type=int, default=0)
+
+    parser.add_argument('--dataset_name', type=str, default="amazon_food")
+    parser.add_argument('--save_path', default='', type=str)
     args = parser.parse_args()
 
     f = open(args.method_name + '.txt', 'w')
     consistent_factor = args.factor
-    alpha = eval(args.alpha)
     device = torch.device("cuda")
-    # clip = eval(args.clip)
     clip = args.clip
     sample_num = args.sample
     save_path = args.save_path

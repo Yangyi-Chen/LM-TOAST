@@ -20,7 +20,10 @@ and upload the folder (**TextClassification**) to the `data` directory. Then, al
 
 
 # Experiments
-
+```sh
+export PYTHONPATH='pwd':$PYTHONPATH
+python src/scripts/run.py --model_name t5 --scale base --dataset_name amazon_food --save_path amazon_t5base.ckpt
+```
 
 
 
